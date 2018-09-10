@@ -3560,7 +3560,7 @@ boost::signals2::connection database::add_pre_apply_action_handler( const apply_
 boost::signals2::connection database::add_post_apply_action_handler( const apply_action_handler_t& func,
    const abstract_plugin& plugin, int32_t group )
 {
-   return connect_impl(_post_apply_action_signal, func, plugin, group, "<-transaction");
+   return connect_impl(_post_apply_action_signal, func, plugin, group, "<-action");
 }
 
 boost::signals2::connection database::add_pre_apply_operation_handler( const apply_operation_handler_t& func,
