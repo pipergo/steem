@@ -550,7 +550,7 @@ public:
       signed_transaction tx,
       bool broadcast = false )
    {
-      static const authority null_auth( 0, public_key_type(), 0 );
+      static const authority null_auth( 1, public_key_type(), 0 );
       flat_set< account_name_type >   req_active_approvals;
       flat_set< account_name_type >   req_owner_approvals;
       flat_set< account_name_type >   req_posting_approvals;
@@ -700,7 +700,7 @@ public:
          {
             auto maybe_account = get_account_from_lut( account_name );
             if( maybe_account.valid() )
-               return (*maybe_account)->active;
+               return (*maybe_account)->owner;
 
             return null_auth;
          },
@@ -708,7 +708,7 @@ public:
          {
             auto maybe_account = get_account_from_lut( account_name );
             if( maybe_account.valid() )
-               return (*maybe_account)->active;
+               return (*maybe_account)->posting;
 
             return null_auth;
          },
