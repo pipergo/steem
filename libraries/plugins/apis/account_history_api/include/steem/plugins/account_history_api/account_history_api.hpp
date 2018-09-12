@@ -2,6 +2,7 @@
 #include <steem/plugins/json_rpc/utility.hpp>
 
 #include <steem/chain/history_object.hpp>
+#include <steem/chain/operation_notification.hpp>
 
 #include <steem/protocol/types.hpp>
 

@@ -8,6 +8,7 @@
 #include <steem/chain/database.hpp>
 #include <steem/chain/global_property_object.hpp>
 #include <steem/chain/index.hpp>
+#include <steem/chain/operation_notification.hpp>
 
 #include <fstream>
 #include <iostream>

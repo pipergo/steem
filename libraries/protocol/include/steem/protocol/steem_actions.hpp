@@ -9,7 +9,17 @@
 
 namespace steem { namespace protocol {
 
-   struct required_action : public base_operation
+   typedef base_operation base_action;
+
+   struct required_action : public base_action
+   {
+      account_name_type account;
+
+      void validate()const;
+      void get_required_active_authorities( flat_set<account_name_type>& a )const{ a.insert(account); }
+   };
+
+   struct optional_action : public base_action
    {
       account_name_type account;
 
@@ -20,3 +30,4 @@ namespace steem { namespace protocol {
 } } // steem::protocol
 
 FC_REFLECT( steem::protocol::required_action, (account) )
+FC_REFLECT( steem::protocol::optional_action, (account) )
